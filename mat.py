@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
-
 import numpy as np
+import random
 
 fig = plt.figure()
 ax = plt.axes()
@@ -74,5 +74,8 @@ for i in range(6):
     # this is how you write on a plot
     plt.text(s=plt.style.available[i], x=5, y=2, color='red')
 plt.show()    
+
+
+
 
 
