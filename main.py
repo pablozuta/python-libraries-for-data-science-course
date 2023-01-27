@@ -1,39 +1,57 @@
 import numpy as np
 import random
 
-# creation numpy array
+# creation numpy array from a python list
+print("creation numpy array from a python list")
 a = np.array([1, 3, 4, 6, 66])
 print(a)
 print(a[2])
-print(type(a))
-
-# setting the data type manually
-b = np.array([2, 65, 432, 4211, 3], dtype='float32')
-print(b)
-
+a2 = np.array([23, 7, 64, 87, 432])
+print(a2) 
+print(a2[2]) 
+print("manual assigment of a value with the index")
 # assigment
 a[0] = 1008
 print(a)
+a2[0] = 3827
+print(a2)
+print("")
+
+# setting the data type manually
+print("setting data type manually")
+b = np.array([2, 65, 432, 4211, 3], dtype='float32')
+print(b)
+b2 = np.array([24, 65, 78, 54], dtype='i4')
+print(b2)
+print("")
+
 
 # create random values on numpy array , the 10 are the range and 6 the size of the array
 random_values_array = np.random.randint(10, size=6)
+random_values_array_dos = np.random.randint(1000, size=10)
 print("this is a random filled values array", random_values_array)
+print("this is a random filled values array", random_values_array_dos)
 random_values_array_two = np.random.randint(100, size=234)
 print("this is a BIG random filled values array", random_values_array_two)
+print("")
 
 # accesing a range between this array
 print("accesing a range in the BIG array", random_values_array_two[0:29])
 print("now a smaller range ", random_values_array_two[0:9])
+print("another smaller range ", random_values_array_dos[0:9])
 # if the range start is zero you can omit that value and use the :[any other number]
 print(random_values_array[:2])
 # accesing in steps from inicial value to the last on increments of 3
 print("accesing in steps from inicial value to the last on increments of 3")
 print(random_values_array_two[0::3])
+print("")
 
 
 # NumPy arrays can be explicitly multidimensional. 
 
 # A list of lists in converted to a 2-dimensional array
+print("")
+print("A list of lists in converted to a 2-dimensional array")
 original_list = [[1,2,3],[3,4,5],[6,7,8]]
 two_dimensional_array = np.array(original_list)
 print(two_dimensional_array)
