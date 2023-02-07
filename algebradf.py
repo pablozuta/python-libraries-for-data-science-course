@@ -110,3 +110,27 @@ print(pd.concat([x, y]))
 # we can ask for hierarchical indexes
 hdf = pd.concat([x, y], keys=['x', 'y'])
 print(hdf)
+
+# ---------------------------------------------------------------------------------
+# JOIN
+# Another very useful function to manipulate Dataframes is  pd.merge
+# which allows you to join DataFrames.
+# A join is assembles information from one table A with that from another table B 
+# according to a chosen criterion.
+# This criterion is called the join condition.
+# This condition is composed of one or more columns that are common to A and B.
+
+# first dataframe with two colums
+df3 = pd.DataFrame({
+    # first column with 4 rows
+    'employee': ['Bob', 'Jake', 'Lisa', 'Sue'],
+    'department': ['Accounting', 'Engineering', 'Engineering', 'HR']})
+
+# second dataframe with two columns    
+df4 = pd.DataFrame({
+    # second column with 4 rows
+    'employee': ['Lisa', 'Bob', 'Jake', 'Sue'],
+    'date': [2004, 2008, 2012, 2014]})
+
+print("df3 dataframe: ", df3)    
+print("df4 dataframe: ", df4)    
