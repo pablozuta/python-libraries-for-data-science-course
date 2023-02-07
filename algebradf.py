@@ -132,5 +132,62 @@ df4 = pd.DataFrame({
     'employee': ['Lisa', 'Bob', 'Jake', 'Sue'],
     'date': [2004, 2008, 2012, 2014]})
 
-print("df3 dataframe: ", df3)    
-print("df4 dataframe: ", df4)    
+print("df3 dataframe: ")
+print(df3)    
+print("df4 dataframe: ")    
+print(df4)   
+
+# here we do the merge of df3 and df4
+df5_merge = pd.merge(df3, df4)
+print('this is the merge of df3 and df4')
+print(df5_merge)
+# the result is a dataframe with 3 columns (the employee columns is the same for the two dataframes)
+# here we have a one to one relationship
+# one employee can belong to only one department
+# and one employee can have only one date on entrance
+
+#---------------------------------------------------------------
+# CARDINALITY
+# one to many (or many to one) dataframe
+# here we gonna make a dataframe for a supervisor
+# a supervisor can have a one to many relationship with employees
+
+df_supervisor = pd.DataFrame({'department': ['Accounting', 'Engineering', 'HR'],
+                             'supervisor': ['Carly', 'Guido', 'Steve']})
+
+print('')
+print('dataframe supervisor')
+print(df_supervisor)
+# in this dataframe carly is supervisor of accounting
+# guido is supervisor of engineering
+# steve is supervisor of hr
+# so guido have a relationship one to many with jake and lisa
+df_sup_emp_merge = pd.merge(df5_merge, df_supervisor)
+print('')
+print('merge supervisor and employees')
+print(df_sup_emp_merge)
+
+# ----------------------------------------------------------------------
+# Many-to-many
+# To continue with our example, let's suppose we have another Dataframe 
+# containing the necessary skills needed to work in each department:
+
+# department is the name of the column and the array data are the rows data of that column
+df_skills = pd.DataFrame({'department': 
+                         ['Accounting', 'Accounting',
+                         'Engineering', 'Engineering',
+                          'HR', 'HR'],
+          
+          # competence is the other column
+          'competence': ['math', 'spreadsheets',
+                         'coding','linux', 
+                         'spreadsheets', 'organization' ]})
+print('')
+print('this is the skills dataframe')
+print(df_skills)
+# Now, we want to associate each employee with the skills they need to work 
+# in their department. 
+# Here, we will need a many-to-many cardinality 
+# because an employee needs several skills
+# and a skill can be shared by several employees. 
+                     
