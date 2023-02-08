@@ -190,4 +190,8 @@ print(df_skills)
 # Here, we will need a many-to-many cardinality 
 # because an employee needs several skills
 # and a skill can be shared by several employees. 
+df_employees_skills = pd.merge(df3, df_skills)
+print('')
+print('this is the merge of employees and skills')
+print(df_employees_skills)
                      
